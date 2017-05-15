@@ -2,7 +2,7 @@
 ### Grundlagen und Techniken für langlebige Softwarearchitekturen ### 
 
 
-Cooming soon...
+Mit der Veröffentlichung des Buches werden hier alle Programmbeispiele des Buches zu finden sein. Der geplante Veröffentlichungstermin ist der 1. August 2017.
 
 <p align="center"><br/>
   <img src="https://github.com/javaakademie/Modularisierung-mit-Java-Buch/blob/master/modularisierung-mit-java-cover.png" border="0">
