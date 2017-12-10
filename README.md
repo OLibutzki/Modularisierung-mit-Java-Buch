@@ -59,13 +59,13 @@ Jeder Ordner enthält Script-Dateien zum Bauen, Verpacken und Ausführen der jewei
 Eine kleine Übersicht der wichtigsten Java-Befehle zum Bauen, Verpacken und Ausführen von modularisierten Java-Anwendungen:
 
 1. Kompilieren der Module-Sourcen<br/>
-...`javac -d <Zielverzeichnis Class-Dateien> --module-source-path <Ort der Modul-Sourcen>`
+   `javac -d <Zielverzeichnis Class-Dateien> --module-source-path <Ort der Modul-Sourcen>`
 
 2. Verpacken der Modul-Class-Dateien in JARs<br/>
-...`jar --create --file <Name JAR-Archiv> --main-class <Anwendungseinstiegspunkt> -C <Ort der Modul-Class-Dateien>`
+   `jar --create --file <Name JAR-Archiv> --main-class <Anwendungseinstiegspunkt> -C <Ort der Modul-Class-Dateien>`
 
 3. Ausführung der Anwendung<br/>
-...`java -p <Modulpfad, Ort der Module> -m <initiales Modul>[/<Hauptklasse mit main-Methode>]`
+   `java -p <Modulpfad, Ort der Module> -m <initiales Modul>[/<Hauptklasse mit main-Methode>]`
 
 ## Feedback
 
