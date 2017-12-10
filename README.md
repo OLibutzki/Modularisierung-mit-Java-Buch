@@ -13,7 +13,7 @@ Viel Spaß beim Experimentieren und der Entwicklung von modularen Java-Anwendunge
 **Modularisierung mit Java 9 - Grundlagen und Techniken für langlebige Softwarearchitekturen**<br/>
 Guido Oelmann<br/>
 [dpunkt.verlag](https://www.dpunkt.de/buecher/12659/9783864904776-modularisierung-mit-java-9.html), 2017<br/>
-[Amazon](https://www.amazon.de/Modularisierung-mit-Java-Grundlagen-Softwarearchitekturen/dp/3864904773)<br/>
+[Buch bei Amazon](https://www.amazon.de/Modularisierung-mit-Java-Grundlagen-Softwarearchitekturen/dp/3864904773)<br/>
 ISBN Print: 978-3-86490-477-6
 
 ## Die Beispiele
