@@ -21,6 +21,7 @@ ISBN Print: 978-3-86490-477-6
 Jeder Ordner enthält Script-Dateien zum Bauen, Verpacken und Ausführen der jeweiligen Anwendung. Dies gilt auch für die Beispiele, die mit Build-Tool-Unterstützung wie z.B. Maven oder mit einer IDE erstellt wurden. Dadurch bleibt immer nachhvollziehbar, was für Schritte einschließlich der nötigen Java-Befehle notwendig sind, um den Bau der modularisierten Anwendungen durchzuführen. 
 
 **Das Java-Modulsystem**<br/>
+* Kapitel 3.1 Das Modul: [1.1-OneModule](1.1-OneModule)  
 * Kapitel 3.2 Abhängigkeiten und Sichtbarkeiten: [Ordner]()  
 * Kapitel 3.2.1 Verteilter Modul-Quellcode: [Ordner]()  
 * Kapitel 3.2.2 Transitive Abhängigkeiten: [Ordner]() 
@@ -72,7 +73,7 @@ Eine kleine Übersicht der wichtigsten Java-Befehle zum Bauen, Verpacken und Ausf
 3. Ausführung der Anwendung<br/>
 ...`java -p <Modulpfad, Ort der Module> -m <initiales Modul>[/<Hauptklasse mit main-Methode>]`
 
-## [Feedback](Feedback)
+## Feedback
 
 Feedback bitte an [Guido Oelmann](mailto:Guido.Oelmann@JavaAkademie.de).
 
