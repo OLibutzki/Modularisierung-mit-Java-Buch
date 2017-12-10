@@ -1,4 +1,5 @@
 # Modularisierung mit Java 9 #
+<<<<<<< HEAD
 
 Willkommen zu den Beispielanwendungen aus dem Buch ¸ber die Modularisierung mit Java!<br/>
 In diesem Repository finden Sie die Quellcodes von allen Programmierbeispielen aus dem Buch.
@@ -98,3 +99,18 @@ Zusammenstellung von Links zum Buch, zum Java-9-Download und zu den g‰ngisten ID
 * [Gradle](https://gradle.org/releases/)
 * [Ant](https://ant.apache.org/bindownload.cgi)
 
+=======
+### Grundlagen und Techniken f√ºr langlebige Softwarearchitekturen ### 
+
+
+Mit der Ver√∂ffentlichung des Buches werden hier alle Programmbeispiele des Buches zu finden sein. Der geplante Ver√∂ffentlichungstermin ist der 1. August 2017.
+
+<p align="center"><br/>
+  <img src="https://github.com/javaakademie/Modularisierung-mit-Java-Buch/blob/master/modularisierung-mit-java-cover.png" border="0">
+</p>
+
+
+## Links ##
+
+* [Buch bei Amazon](https://www.amazon.de/Modularisierung-mit-Java-Grundlagen-Softwarearchitekturen/dp/3864904773)
+>>>>>>> refs/remotes/origin/master
