@@ -1,0 +1,32 @@
+﻿<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+	    <groupId>de.firma</groupId>
+	    <artifactId>parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+	
+    <artifactId>modauto</artifactId>
+
+    <build>
+        <sourceDirectory>src\main\java\de.firma.modauto</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <outputDirectory>../modules</outputDirectory>
+					<archive>
+						<manifestEntries>
+						  <Automatic-Module-Name>supermod</Automatic-Module-Name>
+						</manifestEntries>
+					</archive>
+			</configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

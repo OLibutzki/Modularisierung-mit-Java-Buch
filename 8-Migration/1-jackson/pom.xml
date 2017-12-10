@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.javaakademie</groupId>
+  <artifactId>jackson</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+	<packaging>jar</packaging>
+	<name>jackson</name>
+
+	<properties>
+		<jackson.version>2.8.8.1</jackson.version>
+        <maven.compiler.source>1.9</maven.compiler.source>
+        <maven.compiler.target>1.9</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+    <dependencies>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+    </dependencies>
+
+	<build>
+		<finalName>jackson</finalName>
+		<plugins>
+
+			<!-- Set a JDK compiler level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<!-- Kopieren der Abhaengigkeiten nach /lib -->
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-dependency-plugin</artifactId>
+		        <executions>
+		          <execution>
+		            <id>copy-dependencies</id>
+		            <phase>package</phase>
+		            <goals>
+		              <goal>copy-dependencies</goal>
+		            </goals>
+		            <configuration>
+		              <outputDirectory>${session.executionRootDirectory}/lib</outputDirectory>
+		            </configuration>
+		          </execution>
+		        </executions>
+		    </plugin>		
+			<!-- Make this jar executable -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+				  <archive>
+					<manifest>
+						<!-- Jar file entry point -->
+						<addClasspath>true</addClasspath>
+						<mainClass>de.javaakademie.jackson.App</mainClass>
+					</manifest>
+				  </archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

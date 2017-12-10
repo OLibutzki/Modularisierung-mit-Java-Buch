@@ -1,0 +1,1 @@
+bei manifest-datei wichtig, dass zeilenumbruch hinter der automatic-name... zeile

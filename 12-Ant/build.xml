@@ -1,0 +1,27 @@
+<project name="MyModule" basedir=".">
+    <property name="src">src</property>
+    <property name="classes">classes</property>
+    <property name="modules">modules</property>
+
+    <target name="init">
+        <mkdir dir="${classes}"/>
+        <mkdir dir="${modules}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <echo>Compiling Java module</echo>
+		<javac modulesourcepath="${src}/*"
+			   destdir="${classes}"
+			   includeantruntime="false"
+			   modulepath="${modules}"
+			   source="9"/>		
+	</target>
+
+    <target name="build" depends="compile">
+        <echo>Building modular JAR</echo>
+		<jar destfile="${modules}/de.firma.ant.jar"
+			 basedir="${classes}/de.firma.ant">  
+		</jar>
+	</target>
+
+</project>

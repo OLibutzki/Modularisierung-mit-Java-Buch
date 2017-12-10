@@ -1,0 +1,40 @@
+﻿<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+	    <groupId>de.firma</groupId>
+	    <artifactId>parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+	
+    <artifactId>modmain</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>de.firma</groupId>
+      <artifactId>modauto</artifactId>
+    </dependency>
+  </dependencies>
+  
+    <build>
+        <sourceDirectory>src\main\java\de.firma.modmain</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <outputDirectory>../modules</outputDirectory>
+					<!-- The way this is currently(supported until Java-8) handled by the maven-jar-plugin -->
+					  <archive>
+						<manifest>
+						  <mainClass>de.firma.modmain.App</mainClass>
+						</manifest>
+					  </archive>
+					</configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

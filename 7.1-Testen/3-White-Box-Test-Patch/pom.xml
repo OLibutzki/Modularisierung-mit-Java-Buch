@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.firma</groupId>
+    <artifactId>parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>whitebox</module>
+        <module>whitebox-patch</module>
+    </modules>
+
+    <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.9</maven.compiler.source>
+		<maven.compiler.target>1.9</maven.compiler.target>
+    </properties>
+  
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>de.firma</groupId>
+				<artifactId>whitebox</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.firma</groupId>
+				<artifactId>whitebox-patch</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.commons</groupId>
+			  <artifactId>commons-lang3</artifactId>
+			  <version>3.4</version>
+			</dependency>
+			<dependency>
+			  <groupId>junit</groupId>
+			  <artifactId>junit</artifactId>
+			  <version>4.12</version>
+			</dependency>
+	</dependencies>
+	</dependencyManagement>
+	
+    <build>
+    <plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>2.4.1</version>
+					<configuration>
+					    <failOnError>false</failOnError>
+						<filesets>
+							<fileset>
+								<directory>lib</directory>
+								<includes>
+									<include>**/*</include>
+								</includes>
+								<followSymlinks>false</followSymlinks>
+							</fileset>
+							<fileset>
+								<directory>modules</directory>
+								<includes>
+									<include>**/*.jar</include>
+								</includes>
+								<followSymlinks>false</followSymlinks>
+							</fileset>
+							<fileset>
+								<directory>patches</directory>
+								<includes>
+									<include>**/*.jar</include>
+								</includes>
+								<followSymlinks>false</followSymlinks>
+							</fileset>
+						</filesets>
+					</configuration>
+				</plugin>
+
+	<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.parent.basedir}/lib</outputDirectory>
+			  <!-- no modules in the lib dir -->
+			  <excludeArtifactIds>whitebox</excludeArtifactIds>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>	
+	  <!-- Kopieren der Artefkate, die als Automatic Modules laufen sollen, in den Modulpfad -->
+	  <!-- Im Klassenpfad lib koennen die Artfekate ruhig doppelt liegen bleiben, da diejenigen im Modulpfad immer den Vorrang haben. -->
+	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-resources-plugin</artifactId>
+		<version>3.0.2</version>
+		<executions>
+			<execution>
+				<id>copy-resources</id>
+				<phase>package</phase>
+				<goals>
+					<goal>copy-resources</goal>
+				</goals>
+				<configuration>
+					<outputDirectory>${project.parent.basedir}/modules</outputDirectory>
+					<resources>
+						<resource>
+							<directory>${project.parent.basedir}/lib</directory>
+							<includes>
+								<include>**/*commons-lang3*.*</include>
+							</includes>
+						</resource>
+					</resources>
+				</configuration>
+			</execution>
+		</executions>		      		
+	</plugin>
+    
+	
+	</plugins>
+  </build>
+</project>
