@@ -1,5 +1,4 @@
 # Modularisierung mit Java 9 #
-<<<<<<< HEAD
 
 Willkommen zu den Beispielanwendungen aus dem Buch über die Modularisierung mit Java!<br/>
 In diesem Repository finden Sie die Quellcodes von allen Programmierbeispielen aus dem Buch.
@@ -64,16 +63,16 @@ Jeder Ordner enthält Script-Dateien zum Bauen, Verpacken und Ausführen der jewei
 
 Eine kleine Übersicht der wichtigsten Java-Befehle zum Bauen, Verpacken und Ausführen von modularisierten Java-Anwendungen:
 
-1. Kompilieren der Module-Sourcen
+1. Kompilieren der Module-Sourcen<br/>
 ...`javac -d <Zielverzeichnis Class-Dateien> --module-source-path <Ort der Modul-Sourcen>`
 
-2. Verpacken der Modul-Class-Dateien in JARs
+2. Verpacken der Modul-Class-Dateien in JARs<br/>
 ...`jar --create --file <Name JAR-Archiv> --main-class <Anwendungseinstiegspunkt> -C <Ort der Modul-Class-Dateien>`
 
-3. Ausführung der Anwendung
+3. Ausführung der Anwendung<br/>
 ...`java -p <Modulpfad, Ort der Module> -m <initiales Modul>[/<Hauptklasse mit main-Methode>]`
 
-## [feedback](Feedback)
+## [Feedback](Feedback)
 
 Feedback bitte an [Guido Oelmann](mailto:Guido.Oelmann@JavaAkademie.de).
 
@@ -98,19 +97,3 @@ Zusammenstellung von Links zum Buch, zum Java-9-Download und zu den gängisten ID
 * [Maven](https://maven.apache.org/download.cgi)
 * [Gradle](https://gradle.org/releases/)
 * [Ant](https://ant.apache.org/bindownload.cgi)
-
-=======
-### Grundlagen und Techniken fÃ¼r langlebige Softwarearchitekturen ### 
-
-
-Mit der VerÃ¶ffentlichung des Buches werden hier alle Programmbeispiele des Buches zu finden sein. Der geplante VerÃ¶ffentlichungstermin ist der 1. August 2017.
-
-<p align="center"><br/>
-  <img src="https://github.com/javaakademie/Modularisierung-mit-Java-Buch/blob/master/modularisierung-mit-java-cover.png" border="0">
-</p>
-
-
-## Links ##
-
-* [Buch bei Amazon](https://www.amazon.de/Modularisierung-mit-Java-Grundlagen-Softwarearchitekturen/dp/3864904773)
->>>>>>> refs/remotes/origin/master
